@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('social_links', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            Schema::create('social_links', function (Blueprint $table) {
+                $table->id();
+                $table->string('image')->nullable();
+                $table->string('name')->nullable();
+                $table->integer('position')->nullable();
+                $table->string('url')->nullable();
+                $table->timestamps();
+            });
         });
     }
 

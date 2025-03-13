@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('site_settings', function (Blueprint $table) {
             $table->id();
+            $table->string('logo')->nullable();
+            $table->string('favicon')->nullable();
+            $table->string('footer_logo')->nullable();
+            $table->string('working_hours')->nullable();
+            $table->text('footer_text')->nullable();
+            $table->string('footer_image')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->unique();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
     }

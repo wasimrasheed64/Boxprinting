@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            Schema::create('services', function (Blueprint $table) {
+                $table->id();
+                $table->string('image')->nullable();
+                $table->string('icon_class')->nullable();
+                $table->string('name')->nullable();
+                $table->string('url')->nullable();
+                $table->timestamps();
+            });
         });
     }
 

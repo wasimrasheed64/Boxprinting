@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->string('tags')->nullable();
+            $table->string('slug')->unique();
+            $table->string('short_description')->nullable();
+            $table->text('main_description')->nullable();
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('banner_image')->nullable();
+            $table->string('promotional_image')->nullable();
+            $table->string('thumbnail_image')->nullable();
             $table->timestamps();
         });
     }

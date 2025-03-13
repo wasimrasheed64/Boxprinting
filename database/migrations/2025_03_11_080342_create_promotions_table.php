@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
+            $table->string('url');
+            $table->string('position')->nullable();
+            $table->string('class')->nullable();
+            $table->string('page')->nullable();
+            $table->string('banner_image')->nullable();
+            $table->string('promotional_image')->nullable();
+            $table->string('thumbnail_image')->nullable();
             $table->timestamps();
         });
     }

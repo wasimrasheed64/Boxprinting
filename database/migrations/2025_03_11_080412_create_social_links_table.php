@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_links', function (Blueprint $table) {
+
             Schema::create('social_links', function (Blueprint $table) {
                 $table->id();
                 $table->string('image')->nullable();
@@ -20,7 +20,7 @@ return new class extends Migration
                 $table->string('url')->nullable();
                 $table->timestamps();
             });
-        });
+
     }
 
     /**

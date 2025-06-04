@@ -36,7 +36,7 @@
                 margin-bottom: 0;
                 & a{
                     font-weight: 500;
-                    color: #bc8246;
+                    color: #212357;
                 }
             }
         }
@@ -51,7 +51,7 @@
                     text-transform: capitalize;
                     font-weight: 500;
                     &:hover{
-                        color: #bc8246;
+                        color: #212357;
                     }
                 }
             }
@@ -61,7 +61,7 @@
                     font-size: 18px;
                     color: #000;
                     &:hover{
-                        color: #bc8246;
+                        color: #212357;
                     }
 
                 }
@@ -76,7 +76,7 @@
                 height: 17px;
                 text-align: center;
                 line-height: 17px;
-                background-color: #bc8246;
+                background-color: #212357;
                 color: #fff;
                 font-weight: 500;
                 @include border-radius(50%);
@@ -92,7 +92,7 @@
         &-title{
             font-size: 14px;
             font-weight: 600;
-            color: #bc8246;
+            color: #212357;
             border-bottom: 1px solid #eceaea;
             margin-bottom: 0;
             padding-bottom: 20px;
@@ -127,7 +127,7 @@
                     }
                     &.active,
                     &:hover{
-                        color: #bc8246;
+                        color: #212357;
                     }
                     & i{
                         margin-right: 10px;
@@ -159,7 +159,7 @@
                 margin-right: 5px;
             }
             &:hover{
-                color: #bc8246;
+                color: #212357;
             }
         }
         &-title{
@@ -231,7 +231,7 @@
                     font-weight: 500;
                 }
                 &:focus{
-                    border-color: #bc8246;
+                    border-color: #212357;
                     background-color: #fff;
                 }
             }
@@ -251,8 +251,8 @@
 
                 &:hover{
                     color: #fff;
-                    background-color: #bc8246;
-                    border-color: #bc8246;
+                    background-color: #212357;
+                    border-color: #212357;
                 }
             }
         }
@@ -279,7 +279,7 @@
                 margin-right: 5px;
             }
             &:hover{
-                color: #bc8246;
+                color: #212357;
             }
         }
         &-title{
@@ -364,7 +364,7 @@
         }
     }
     &__id{
-        color: #bc8246;
+        color: #212357;
         font-weight: 500;
 
     }
@@ -374,13 +374,13 @@
             color: #000;
 
             &:hover{
-                color: #bc8246;
+                color: #212357;
             }
         }
     }
     &__title{
         &:hover{
-            color: #bc8246;
+            color: #212357;
         }
     }
 }
@@ -404,7 +404,7 @@
                 margin-right: 5px;
             }
             &:hover{
-                color: #bc8246;
+                color: #212357;
             }
         }
         &-title{
@@ -474,7 +474,7 @@
                 font-weight: 500;
             }
             &:focus{
-                border-color: #bc8246;
+                border-color: #212357;
                 background-color: #fff;
             }
         }

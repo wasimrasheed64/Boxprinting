@@ -61,7 +61,7 @@
 </section>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import SortFiltering from './filter-widget/SortFiltering.vue';
 import { useProductsStore } from '../../store/useProducts';
@@ -69,7 +69,7 @@ import ProductItem from '../products/ProductItem.vue';
 import ProductListItem from '../products/ProductListItem.vue';
 import Pagination from '../../ui/Pagination.vue';
 import ShopSidebar from './ShopSidebar.vue';
-import {type ProductType} from '../../types/productType';
+
 
 export default defineComponent({
     props:{
@@ -81,13 +81,13 @@ export default defineComponent({
   components: {ShopSidebar, SortFiltering, ProductItem, ProductListItem, Pagination },
   data() {
         return {
-            filteredRows: [] as ProductType[],
-            pageStart: 0 as number,
-            countOfPage: 9 as number
+            filteredRows: [],
+            pageStart: 0,
+            countOfPage: 9
         }
     },
     methods: {
-        paginatedData(filteredRows:ProductType[], pageStart:number, countOfPage:number) {
+        paginatedData(filteredRows, pageStart, countOfPage) {
             this.filteredRows = filteredRows;
             this.pageStart = pageStart;
             this.countOfPage = countOfPage;

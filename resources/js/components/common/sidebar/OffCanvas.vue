@@ -30,15 +30,15 @@
                 :class="`sub-menu ${activeMenu === menu.title ? 'active' : ''}`"
               >
                 <li v-for="(sub_m, index) in menu.dropdownMenu" :key="index">
-                  <nuxt-link :href="`${sub_m.link}`">
+                  <Link :href="`${sub_m.link}`">
                    {{sub_m.title}}
-                  </nuxt-link>
+                  </Link>
                 </li>
               </ul>
             </li>
 
             <li v-if="!menu.dropdownMenu">
-              <nuxt-link :href="`${menu.link}`">{{ menu.title }}</nuxt-link>
+              <Link :href="`${menu.link}`">{{ menu.title }}</Link>
             </li>
           </template>
         </ul>
@@ -54,12 +54,13 @@
   ></div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, ref } from "vue";
 // import menuData from "../../../mixins/menuData";
 
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   data() {
     return {
       activeMenu: "",
@@ -70,7 +71,7 @@ export default defineComponent({
     OpenOffcanvas() {
       this.showSidebar = true;
     },
-    handleOpenMenu(navTitle: string) {
+    handleOpenMenu(navTitle) {
       if (navTitle === this.activeMenu) {
         this.activeMenu = "";
       } else {
@@ -85,12 +86,6 @@ export default defineComponent({
         dropdown: true,
         dropdownMenu: [
           { link: "/", title: "Home Style 1" },
-          { link: "/home-2", title: "Home Style 2" },
-          { link: "/home-3", title: "Home Style 3" },
-          { link: "/home-4", title: "Home Style 4" },
-          { link: "/home-5", title: "Home Style 5" },
-          { link: "/home-6", title: "Home Style 6" },
-          { link: "/home-7", title: "Home Style 7" },
         ],
       },
       {
@@ -98,9 +93,6 @@ export default defineComponent({
         dropdown: true,
         dropdownMenu: [
           { link: "/shop", title: "Standard Shop Page" },
-          { link: "/shop-right", title: "Shop Right Sidebar" },
-          { link: "/shop-4-col", title: "Shop 4 Column" },
-          { link: "/shop-3-col", title: "Shop 3 Column" },
           { link: "/product-details", title: "Shop Details" },
         ],
       },
@@ -122,11 +114,6 @@ export default defineComponent({
         dropdown: true,
         dropdownMenu: [
           { link: "/blog", title: "Blog" },
-          { link: "/blog-left-sidebar", title: "Blog Left Sidebar" },
-          { link: "/blog-no-sidebar", title: "Blog No Sidebar" },
-          { link: "/blog-2-col", title: "Blog 2 Column" },
-          { link: "/blog-3-col", title: "Blog 3 Column" },
-          { link: "/blog-2-col-mas", title: "Blog 2 Col Masonry" },
           { link: "/blog-details", title: "Blog Details" },
         ],
       },

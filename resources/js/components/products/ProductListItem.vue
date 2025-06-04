@@ -3,10 +3,10 @@
       <div class="row">
           <div class="col-xl-4 col-lg-4">
               <div class="product__thumb">
-                  <nuxt-link :href="`/product-details/${item.id}`" class="w-img">
+                  <Link :href="`/product-details/${item.id}`" class="w-img">
                       <img :src="item.img" alt="product-img">
                       <img class="product__thumb-2" :src="item.thumb_img" alt="product-img">
-                  </nuxt-link>
+                  </Link>
                   <div v-if="item.sale_of_per || item.new" class="product__sale">
                     <span v-if="item.new || item.sale_of_per" class="new">new</span>
                     <span v-if="item.sale_of_per" class="percent">-{{item.sale_of_per}}%</span>
@@ -17,9 +17,9 @@
               <div class="product__content p-relative">
                   <div class="product__content-inner list">
                       <h4>
-                        <nuxt-link :href="`/product-details/${item.id}`">
+                        <Link :href="`/product-details/${item.id}`">
                           <span v-html="item.title"></span>
-                        </nuxt-link>
+                        </Link>
                       </h4>
                       <div class="product__price-2 mb-10">
                         <span>${{typeof item.price === 'number' ? item.price.toFixed(2) : item.price}}</span>
@@ -60,20 +60,20 @@
   <!-- product modal end -->
 </template>
 
-<script lang="ts">
-import { defineComponent,type PropType } from 'vue'
-import {type ProductType} from '../../types/productType';
+<script>
+import { defineComponent } from 'vue'
 import ProductModal from '../common/modals/ProductModal.vue';
 import { useCartStore } from '../../store/useCart';
 import { useCompareStore } from '../../store/useCompare';
 import { useWishlistStore } from '../../store/useWishlist';
+import { Link } from '@inertiajs/vue3';
 
 export default defineComponent({
-  components: { ProductModal },
+  components: { Link },
+  components: { ProductModal , Link},
   props:{
     item:{
-      type:Object as PropType<ProductType>,
-      default:{},
+      type:Object,
       required:true
     }
   },

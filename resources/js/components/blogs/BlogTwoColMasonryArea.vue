@@ -10,15 +10,15 @@
             <div class="blog__wrapper">
               <div class="blog__item mb-60">
                 <div class="blog__thumb fix">
-                  <nuxt-link :href="`/blog-details/${item.id}`" class="w-img">
+                  <Link :href="`/blog-details/${item.id}`" class="w-img">
                     <img :src="item.img" alt="blog" />
-                  </nuxt-link>
+                  </Link>
                 </div>
                 <div class="blog__content">
                   <h4>
-                    <nuxt-link :href="`/blog-details/${item.id}`">
+                    <Link :href="`/blog-details/${item.id}`">
                       <span v-html="item.title"></span>
-                    </nuxt-link>
+                    </Link>
                   </h4>
                   <div class="blog__meta">
                     <span>By <a href="#">{{item.author}}</a></span>
@@ -27,7 +27,7 @@
                   <p>
                     {{item.desc}} [...]
                   </p>
-                  <nuxt-link :href="`/blog-details/${item.id}`" class="os-btn">read more</nuxt-link>
+                  <Link :href="`/blog-details/${item.id}`" class="os-btn">read more</Link>
                 </div>
               </div>
             </div>
@@ -38,11 +38,11 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
-import blogData from "../../data/blog-data";
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup() {
     return {
       blogData,

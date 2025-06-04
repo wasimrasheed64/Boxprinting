@@ -5,7 +5,7 @@
   </layout>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import Layout from "../layout/AppLayout.vue";
 import BreadcrumbArea from "../components/common/breadcrumb/BreadcrumbArea.vue";
@@ -18,9 +18,9 @@ export default defineComponent({
     BlogStandardArea,
   },
   setup() {
-    useHead({
-      title: "Blog - outStock",
-    });
+    // useHead({
+    //   title: "Blog - outStock",
+    // });
   },
 });
 </script>

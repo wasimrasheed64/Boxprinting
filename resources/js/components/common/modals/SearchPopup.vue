@@ -15,12 +15,12 @@
                         </div>
                         <div class="header__search-categories">
                             <ul class="search-category">
-                                <li><nuxt-link href="/shop">All Categories</nuxt-link></li>
-                                <li><nuxt-link href="/shop">Accessories</nuxt-link></li>
-                                <li><nuxt-link href="/shop">Chair</nuxt-link></li>
-                                <li><nuxt-link href="/shop">Tablet</nuxt-link></li>
-                                <li><nuxt-link href="/shop">Men</nuxt-link></li>
-                                <li><nuxt-link href="/shop">Women</nuxt-link></li>
+                                <li><Link href="/shop">All Categories</Link></li>
+                                <li><Link href="/shop">Accessories</Link></li>
+                                <li><Link href="/shop">Chair</Link></li>
+                                <li><Link href="/shop">Tablet</Link></li>
+                                <li><Link href="/shop">Men</Link></li>
+                                <li><Link href="/shop">Women</Link></li>
                             </ul>
                         </div>
                         <div class="header__search-input p-relative">
@@ -40,10 +40,11 @@
   <!-- body overlay end -->
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
 //  emits:['searchPopup'],
  data() {
   return {

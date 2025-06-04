@@ -49,7 +49,7 @@
                               <h5>information</h5>
                           </div>
                           <div class="footer__widget-content">
-                              <div class="footer__links">
+                              <div class="footer__Links">
                                   <ul>
                                       <li><a href="#">About Us</a></li>
                                       <li><a href="#">Careers</a></li>
@@ -67,7 +67,7 @@
                               <h5>Customer Service</h5>
                           </div>
                           <div class="footer__widget-content">
-                              <div class="footer__links">
+                              <div class="footer__Links">
                                   <ul>
                                       <li><a href="#">Shipping Policy</a></li>
                                       <li><a href="#">Help & Contact Us</a></li>
@@ -87,7 +87,7 @@
               <div class="row">
                   <div class="col-xl-6 col-lg-7">
                       <div class="footer__copyright">
-                          <p>Copyright {{new Date().getFullYear()}} © <nuxt-link href="/">Outstock</nuxt-link> all rights reserved. Powered by <nuxt-link href="/">Theme_pure</nuxt-link></p>
+                          <p>Copyright {{new Date().getFullYear()}} © <Link href="/">Outstock</Link> all rights reserved. Powered by <Link href="/">Theme_pure</Link></p>
                       </div>
                   </div>
                   <div class="col-xl-6 col-lg-5">

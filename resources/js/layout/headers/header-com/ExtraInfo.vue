@@ -6,11 +6,11 @@
                   <h5>My Account</h5>
               </div>
               <ul>
-                  <li><nuxt-link href="/account">My Account</nuxt-link></li>
-                  <li><nuxt-link href="/wishlist">Wishlist</nuxt-link></li>
-                  <li><nuxt-link href="/cart">Cart</nuxt-link></li>
-                  <li><nuxt-link href="/checkout">Checkout</nuxt-link></li>
-                  <li><nuxt-link href="/register">Create Account</nuxt-link></li>
+                  <li><Link href="/account">My Account</Link></li>
+                  <li><Link href="/wishlist">Wishlist</Link></li>
+                  <li><Link href="/cart">Cart</Link></li>
+                  <li><Link href="/checkout">Checkout</Link></li>
+                  <li><Link href="/register">Create Account</Link></li>
               </ul>
           </div>
       </li>
@@ -43,10 +43,12 @@
   </ul>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup () {
     return {}
   }

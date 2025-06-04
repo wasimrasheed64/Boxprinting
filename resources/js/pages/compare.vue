@@ -5,7 +5,7 @@
   </layout>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import Layout from "../layout/AppLayout.vue";
 import BreadcrumbArea from "../components/common/breadcrumb/BreadcrumbArea.vue";
@@ -18,9 +18,9 @@ export default defineComponent({
     CompareArea,
   },
   setup() {
-    useHead({
-      title: "Compare - outStock",
-    });
+    // useHead({
+    //   title: "Compare - outStock",
+    // });
   },
 });
 </script>

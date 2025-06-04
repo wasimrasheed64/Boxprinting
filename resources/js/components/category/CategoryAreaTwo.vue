@@ -7,7 +7,7 @@
           <div class="banner__content-5">
               <h5>{{item.parentTitle}}</h5>
               <p>{{item.smDesc}}</p>
-              <nuxt-link href="/shop" class="os-btn-5">Shop Now</nuxt-link>
+              <Link href="/shop" class="os-btn-5">Shop Now</Link>
           </div>
       </div>
   </div>
@@ -16,8 +16,9 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import category_data from "../../data/category-data";
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup() {
     const categoryData = category_data.slice(3, 6);
     return {

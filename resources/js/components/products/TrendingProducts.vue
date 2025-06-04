@@ -74,3 +74,8 @@ export default defineComponent({
   }
 });
 </script>
+<style scoped>
+.product__area{
+  background: #f9f7f0;
+}
+</style>

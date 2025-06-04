@@ -21,17 +21,18 @@
       <div class="mt-10"></div>
       <button type="submit" class="os-btn w-100">Register Now</button>
       <div class="or-divide"><span>or</span></div>
-      <nuxt-link href="/login" class="os-btn os-btn-black w-100">login Now</nuxt-link>
+      <Link href="/login" class="os-btn os-btn-black w-100">login Now</Link>
   </Form>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import { Field, Form, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
+import { Link } from '@inertiajs/vue3';
 
 export default defineComponent({
-  components: { Field, Form, ErrorMessage },
+  components: { Field, Form, ErrorMessage, Link },
   setup() {
     const schema = yup.object({
       name: yup.string().required().label("Name"),
@@ -39,10 +40,10 @@ export default defineComponent({
       password: yup.string().required().min(6).label("Password"),
     });
 
-    function onSubmit(values: object,{resetForm}: {resetForm: () => void}) {
+    const onSubmit = (values, { resetForm }) => {
       alert(JSON.stringify(values, null, 2));
-      resetForm()
-    }
+      resetForm();
+    };
     return { schema, onSubmit };
   },
 });

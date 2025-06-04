@@ -20,6 +20,7 @@
 .w-img{
 	& img{
 		width: 100%;
+		border-radius: 20px;
 	}
 }
 .m-img{
@@ -127,7 +128,7 @@ li {
 }
 p {
 	font-family: $pop;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
 	color: $body-text-color;
 	margin-bottom: 15px;
@@ -401,7 +402,7 @@ p {
 	padding: 0 42px;
 	border: 2px solid $border;
 	color: $black-2;
-	background: transparent;
+	background: $black-2;
 	z-index: 1;
 	font-size: 12px;
 	& span{
@@ -575,7 +576,7 @@ p {
 			display: inline-block;
 			font-weight: 400;
 			position: relative;
-			background: #fff none repeat scroll 0 0;
+			background: #212357 none repeat scroll 0 0;
 			padding: 0 50px;
 			z-index: 1;
 			@media #{$xs}{

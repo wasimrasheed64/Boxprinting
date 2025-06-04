@@ -1,10 +1,10 @@
 <template>
       <div class="product__wrapper mb-60">
           <div class="product__thumb">
-              <nuxt-link :href="`/product-details/${item.id}`" class="w-img">
+              <Link :href="`/product-details/${item.id}`" class="w-img">
                   <img :src="item.img" alt="product-img">
                   <img class="product__thumb-2" :src="item.thumb_img" alt="product-img">
-              </nuxt-link>
+              </Link>
               <div class="product__action transition-3">
                   <a @click.prevent="wishlistState.add_wishlist_product(item)" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
                       <i class="fal fa-heart"></i>
@@ -24,9 +24,9 @@
           </div>
           <div class="product__content p-relative">
               <div class="product__content-inner">
-                <nuxt-link :href="`/product-details/${item.id}`">
+                <Link :href="`/product-details/${item.id}`">
                   <span v-html="item.title"></span>
-                </nuxt-link>
+                </Link>
                   <div class="product__price transition-3">
                       <span>${{typeof item.price === 'number' ? item.price.toFixed(2) : item.price}}</span>
                       <span v-if="item.old_price" class="old-price">${{item.old_price}}</span>
@@ -43,20 +43,19 @@
       <!-- product modal end -->
 </template>
 
-<script lang="ts">
-import { defineComponent,type PropType } from 'vue';
-import {type ProductType} from '../../types/productType';
+<script>
+import { defineComponent } from 'vue';
 import { useCartStore } from '../../store/useCart';
 import { useWishlistStore } from '../../store/useWishlist';
 import { useCompareStore } from '../../store/useCompare';
 import ProductModal from '../common/modals/ProductModal.vue';
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
-  components: { ProductModal },
+  components: { Link },
+  components: { ProductModal, Link },
   props:{
     item:{
-      type:Object as PropType<ProductType>,
-      default:{},
+      type:Object,
       required:true
     }
   },

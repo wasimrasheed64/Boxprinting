@@ -65,3 +65,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.client__area {
+ background: #f9f7f0;
+}
+</style>

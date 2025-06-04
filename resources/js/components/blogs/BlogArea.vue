@@ -48,7 +48,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 
 // external
 import { Carousel, Slide } from "vue3-carousel";

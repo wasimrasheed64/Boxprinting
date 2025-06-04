@@ -23,9 +23,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="product__big-image effectThree mb-40">
-                            <nuxt-link :href="`/product-details/${big_prd_1.id}`">
+                            <Link :href="`/product-details/${big_prd_1.id}`">
                               <img :src="big_prd_1.big_img" alt="">
-                            </nuxt-link>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__big-image effectThree mb-40">
-                            <nuxt-link :href="`/product-details/${big_prd_2.id}`">
+                            <Link :href="`/product-details/${big_prd_2.id}`">
                               <img :src="big_prd_2.big_img" alt="product img">
-                            </nuxt-link>
+                            </Link>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -55,20 +55,19 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import { useProductsStore } from "../../store/useProducts";
-import ProductItemTwo from './ProductItemTwo.vue';
-import type { ProductType } from '../../types/productType';
-
+import ProductItemTwo from './ProductItem.vue';
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
-  components: { ProductItemTwo },
+  components: { ProductItemTwo , Link },
   setup() {
     const store = useProductsStore();
-    const best_sale_prd = store.products.filter((p:ProductType) => p.bestSeller);
-    const big_prd_1 = best_sale_prd.filter((p:ProductType) => p.big_img)[0];
-    const big_prd_2 = best_sale_prd.filter((p:ProductType) => p.big_img)[1];
-    const sm_best_prd = best_sale_prd.filter((p:ProductType) => !p.big_img);
+    const best_sale_prd = store.products.filter((p) => p.bestSeller);
+    const big_prd_1 = best_sale_prd.filter((p) => p.big_img)[0];
+    const big_prd_2 = best_sale_prd.filter((p) => p.big_img)[1];
+    const sm_best_prd = best_sale_prd.filter((p) => !p.big_img);
     return {
       big_prd_1,
       big_prd_2,

@@ -55,4 +55,7 @@ export default defineComponent({
 .sale__area .carousel__slide.sale__item {
   padding: 0 15px;
 }
+.sale__area{
+ background: #f9f7f0;
+}
 </style>

@@ -8,15 +8,15 @@
           store.cart_products.length === 2 ? 'slider-height_2' : 'slider-height'}`">
               <li v-for="(item,i) in store.cart_products" :key="i">
                   <div class="cart-img f-left">
-                      <nuxt-link :href="`/product-details/${item.id}`">
+                      <Link :href="`/product-details/${item.id}`">
                           <img :src="item.img" alt="" />
-                      </nuxt-link>
+                      </Link>
                   </div>
                   <div class="cart-content f-left text-left">
                       <h5>
-                        <nuxt-link :href="`/product-details/${item.id}`">
+                        <Link :href="`/product-details/${item.id}`">
                             <span v-html="item.title"></span>
-                        </nuxt-link>
+                        </Link>
                       </h5>
                       <div class="cart-price">
                           <span class="ammount">{{item.orderQuantity}}<i class="fal fa-times"></i></span>
@@ -35,8 +35,8 @@
               <span>${{store.totalPriceQuantity.total.toFixed(2)}}</span>
           </div>
           <div class="checkout-link">
-              <nuxt-link href="/cart" class="os-btn">view Cart</nuxt-link>
-              <nuxt-link class="os-btn os-btn-black" href="/checkout">Checkout</nuxt-link>
+              <Link href="/cart" class="os-btn">view Cart</Link>
+              <Link class="os-btn os-btn-black" href="/checkout">Checkout</Link>
           </div>
       </div>
   </div>
@@ -45,8 +45,9 @@
 <script>
 import { defineComponent } from 'vue';
 import { useCartStore } from '@/store/useCart.js';
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup () {
     const store = useCartStore();
     return {store}

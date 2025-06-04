@@ -12,7 +12,7 @@
                       <h3 class="profile__basic-title">
                           Welcome Back <span>Admin</span>
                       </h3>
-                      <p>{{state.cart_products.length}} Running Products <nuxt-link href="/cart">View Cart</nuxt-link></p>
+                      <p>{{state.cart_products.length}} Running Products <Link href="/cart">View Cart</Link></p>
                     </div>
                 </div>
               </div>

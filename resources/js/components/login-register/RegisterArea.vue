@@ -13,12 +13,12 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import RegisterForm from "../forms/RegisterForm.vue";
 
 export default defineComponent({
-  components: { RegisterForm },
+  components: { RegisterForm},
   setup() {
     return {};
   },

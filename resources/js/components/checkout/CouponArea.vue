@@ -32,7 +32,7 @@
                     </label>
                   </p>
                   <p class="lost-password">
-                    <nuxt-link href="/login">Lost your password?</nuxt-link>
+                    <Link href="/login">Lost your password?</Link>
                   </p>
                 </form>
               </div>
@@ -66,16 +66,12 @@
 </template>
 
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
-interface formValueType {
-  name_or_email:string,
-  password:string,
-  isChecked:boolean
-}
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   data () {
     return {
       checkoutLogin:false,
@@ -84,7 +80,7 @@ export default defineComponent({
         name_or_email: "",
         password: "",
         isChecked: false,
-      } as formValueType,
+      },
       couponVal:''
     }
   },
@@ -96,7 +92,7 @@ export default defineComponent({
       this.checkoutCoupon = !this.checkoutCoupon
     },
     handleSubmit() {
-      this.formValue = {} as formValueType;
+      this.formValue = {};
     },
     handleCouponSubmit() {
       console.log(this.couponVal);

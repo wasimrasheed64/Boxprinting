@@ -4,6 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 defineProps<{ msg: string | undefined}>();
 </script>

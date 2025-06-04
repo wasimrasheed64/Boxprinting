@@ -73,15 +73,15 @@
               class="d-flex"
             >
               <div class="rc__post-thumb mr-20">
-                <nuxt-link :href="`/blog-details/${blog.id}`">
+                <Link :href="`/blog-details/${blog.id}`">
                   <img :src="blog.img" alt="blog-1" style="width:70px;height: 70px;object-fit: cover;"/>
-                </nuxt-link>
+                </Link>
               </div>
               <div class="rc__post-content">
                 <h6>
-                  <nuxt-link :href="`/blog-details/${blog.id}`">
+                  <Link :href="`/blog-details/${blog.id}`">
                     <span v-html="blog.title.slice(0,20)"></span>
-                  </nuxt-link>
+                  </Link>
                 </h6>
                 <div class="rc__meta">
                   <span>{{ blog.date }}</span>
@@ -164,7 +164,9 @@
 import { defineComponent } from "vue";
 import blogData from "../../../../data/blog-data.js";
 
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup() {
     const categoryData = [
       {

@@ -24,16 +24,16 @@
               >
                 <div class="blog-thumb m-img">
                   <img :src="item.img" alt="blog-img" />
-                  <nuxt-link :href="`/blog-details/${item.id}`" class="btn">
+                  <Link :href="`/blog-details/${item.id}`" class="btn">
                     <i class="fa fa-link"></i>
-                  </nuxt-link>
+                  </Link>
                 </div>
                 <div class="blog__post-content">
                   <div class="blog__wrapper">
                     <h5 class="blog__post-title">
-                    <nuxt-link :href="`/blog-details/${item.id}`" >
+                    <Link :href="`/blog-details/${item.id}`" >
                       <span v-html="item.title"></span>
-                    </nuxt-link>
+                    </Link>
                     </h5>
                     <div class="article-meta d-flex justify-content-center">
                       <span class="article-author">

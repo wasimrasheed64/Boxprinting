@@ -5,7 +5,7 @@
   </layout>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import Layout from "../layout/AppLayout.vue";
 import BreadcrumbArea from "../components/common/breadcrumb/BreadcrumbArea.vue";
@@ -17,8 +17,8 @@ export default defineComponent({
     BreadcrumbArea,
     ShopArea,
   },
-  setup() {
-    useHead({title: "Shop - outStock"});
-  },
+  // setup() {
+  //   useHead({title: "Shop - outStock"});
+  // },
 });
 </script>

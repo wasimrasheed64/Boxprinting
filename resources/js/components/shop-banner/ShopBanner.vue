@@ -1,5 +1,5 @@
 <template>
-  <div class="banner__area-2 pb-60">
+  <div class="banner__area-2 ptb-75">
     <div :class="`container-fluid ${style_2?'':'p-0'}`">
       <div class="row g-0">
         <div
@@ -13,24 +13,24 @@
             } p-relative mb-30 p${item.id === 1 ? 'r' : 'l'}-15`"
           >
             <div class="banner__thumb fix">
-              <nuxt-link :href="`/product-details/${item.id}`" class="w-img">
+              <Link :href="`/product-details/${item.id}`" class="w-img">
                 <img :src="item.banner_img" alt="banner" />
-              </nuxt-link>
+              </Link>
             </div>
             <div
               :class="`banner__content-2 ${style_3 ? 'banner__content-4' : ''} ${item.id !== 1 && style_3 ? 'banner__content-4-right' : ''} p-absolute transition-3`"
             >
               <span>Products {{ item.category }}</span>
               <h4>
-                <nuxt-link :href="`/product-details/${item.id}`">{{ item.title }}</nuxt-link>
+                <Link :href="`/product-details/${item.id}`">{{ item.title }}</Link>
               </h4>
               <p class="sm_desc">
                 {{ style_3 ? item.sm_desc.slice(0, 50) : item.sm_desc }}
               </p>
-              <nuxt-link :href="`/product-details/${item.id}`" class="os-btn os-btn-2">
+              <Link :href="`/product-details/${item.id}`" class="os-btn os-btn-2">
                 buy now /
                 <span>${{ item.price }}</span>
-              </nuxt-link>
+              </Link>
             </div>
           </div>
         </div>
@@ -39,16 +39,16 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import { useProductsStore } from "../../store/useProducts";
-import type { ProductType } from "../../types/productType";
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   props: ["style_2", "style_3"],
   setup() {
     const store = useProductsStore();
-    const banner_products = store.products.filter((p: ProductType) => p.banner).slice(0, 2);
+    const banner_products = store.products.filter((p) => p.banner).slice(0, 2);
     return {
       banner_products,
     };

@@ -6,9 +6,9 @@
               <client-only>
                 <div v-if="state.compare.length === 0" class='text-center'>
                   <h3>No Compare product</h3>
-                  <nuxt-link class="os-btn os-btn-black mt-20" to="/shop">
+                  <Link class="os-btn os-btn-black mt-20" to="/shop">
                      Shop Now
-                  </nuxt-link>
+                  </Link>
                 </div>
                 <div v-if="state.compare.length > 0" class="tp-compare-table text-center">
                     <table class="table table-responsive">
@@ -82,12 +82,14 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import { useCartStore } from '../../store/useCart';
 import { useCompareStore } from '../../store/useCompare';
 
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   setup () {
     const state = useCompareStore();
     const cartState = useCartStore()

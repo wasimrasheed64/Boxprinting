@@ -1,9 +1,9 @@
 <template>
   <div :class="`product__modal-content ${style_2?'product__modal-content-2':''}`">
       <h4>
-        <nuxt-link :href="`/product-details/${item.id}`">
+        <Link :href="`/product-details/${item.id}`">
             <span v-html="item.title"></span>
-        </nuxt-link>
+        </Link>
       </h4>
       <div class="rating rating-shop mb-15">
           <ul>
@@ -65,15 +65,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent,type PropType } from 'vue';
-import {type ProductType} from '../../types/productType';
+import { defineComponent } from 'vue';
 import { useCartStore } from '../../store/useCart';
-
+import { Link } from '@inertiajs/vue3';
 export default defineComponent({
+  components: { Link },
   props:{
     item:{
-      type:Object as PropType<ProductType>,
-      default:{},
+      type:Object,
       required:true
     },
     style_2:{

@@ -1,14 +1,14 @@
 <template>
   <tr>
     <td class="product-thumbnail">
-      <nuxt-link :href="`/product-details/${item.id}`">
+      <Link :href="`/product-details/${item.id}`">
         <img :src="item.img" alt="" />
-      </nuxt-link>
+      </Link>
     </td>
     <td class="product-name">
-      <nuxt-link :href="`/product-details/${item.id}`">
+      <Link :href="`/product-details/${item.id}`">
         <span v-html="item.title"></span>
-      </nuxt-link>
+      </Link>
     </td>
     <td class="product-price">
       <span class="amount">${{ item.price }}</span>
@@ -38,16 +38,16 @@
   </tr>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
-import {type ProductType} from '../../types/productType';
+<script>
+import { defineComponent} from "vue";
 import { useCartStore } from "../../store/useCart";
+import { Link } from '@inertiajs/vue3';
 
 export default defineComponent({
+  components: { Link },
   props: {
     item: {
-      type: Object as PropType<ProductType>,
-      default: {},
+      type: Object,
       required: true,
     },
   },

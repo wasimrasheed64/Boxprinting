@@ -13,11 +13,11 @@
               <div class="slider__content">
                 <h2 v-html="item.title"></h2>
                 <p v-html="item.subtile"></p>
-                <nuxt-link
+                <Link
                   href="/shop"
                   class="os-btn os-btn-2 hero-slider-btn">
                   Discover now
-                </nuxt-link>
+                </Link>
               </div>
             </div>
           </div>

@@ -7,6 +7,9 @@
 
 .banner{
     &__area{
+        &-2{
+            background: #212357;
+        }
         &-df{
             display: flex;
             @media #{$lg,$md,$sm,$xs} {

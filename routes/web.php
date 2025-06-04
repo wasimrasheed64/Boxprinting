@@ -43,6 +43,21 @@ Route::get('/contact', function () {
     return Inertia::render('contact');
 })->name('contact');
 
+Route::get('/blog-details', function () {
+    return Inertia::render('blog-details/index');
+})->name('blog-details');
+
+Route::get('/blog', function () {
+    return Inertia::render('blog');
+})->name('blog');
+
+Route::get('/shop', function () {
+    return Inertia::render('shop');
+})->name('shop');
+
+Route::get('/product-details', function () {
+    return Inertia::render('product-details/index');
+})->name('product-details');
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

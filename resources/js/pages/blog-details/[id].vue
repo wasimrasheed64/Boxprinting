@@ -21,9 +21,9 @@ export default defineComponent({
     BlogDetailsArea,
   },
   setup() {
-    useHead({
-      title: "Blog Details - outStock",
-    });
+    // useHead({
+    //   title: "Blog Details - outStock",
+    // });
     return {
       blogData,
     }

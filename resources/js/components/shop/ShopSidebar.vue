@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import PriceFilter from "./filter-widget/PriceFilter.vue";
 import ProductBrands from "./filter-widget/ProductBrands.vue";

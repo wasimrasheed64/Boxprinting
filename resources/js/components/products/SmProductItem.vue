@@ -3,19 +3,19 @@
     class="features__product-wrapper d-flex mb-20"
   >
     <div class="features__product-thumb mr-15">
-      <nuxt-link :href="`/product-details/${prd.id}`">
+      <Link :href="`/product-details/${prd.id}`">
         <img
           :src="prd.img"
           alt="pro-sm-1"
           style="width: 86px; height: 110px;object-fit: cover;"
         />
-      </nuxt-link>
+      </Link>
     </div>
     <div class="features__product-content">
       <h5>
-        <nuxt-link :href="`/product-details/${prd.id}`">
+        <Link :href="`/product-details/${prd.id}`">
           <span v-html="prd.title"></span>
-        </nuxt-link>
+        </Link>
       </h5>
       <div v-if="prd.topRated" class="rating rating-shop mb-5">
           <ul>
@@ -39,16 +39,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent,type PropType } from "vue";
+<script>
+import { defineComponent } from "vue";
 import { useCartStore } from "../../store/useCart";
-import {type ProductType} from '../../types/productType';
+
 
 export default defineComponent({
   props:{
     prd:{
-      type: Object as PropType<ProductType>,
-      default: {},
+      type: Object,
       required: true,
     }
   },

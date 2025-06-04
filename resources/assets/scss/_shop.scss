@@ -1786,10 +1786,10 @@ p.checkout-coupon input[type="text"] {
       margin-bottom: 25px;
   }
   .slider-connect {
-      background-color: #bc8246;
+      background-color: #212357;
   }
   // .slider-handle {
-  //   background: #bc8246;
+  //   background: #212357;
   //   box-shadow: none;
   //   height: var(--slider-handle-height,16px);
   //   width: var(--slider-handle-width,16px);
@@ -1800,15 +1800,15 @@ p.checkout-coupon input[type="text"] {
   & .sidebar__widget{
     & .categories{
        & button.active{
-          color: #bc8246;
+          color: #212357;
        }
        & a.active{
-          color: #bc8246;
+          color: #212357;
        }
     }
     & .size{
       & li.active a{
-        background-color: #bc8246;
+        background-color: #212357;
         color: white;
       }
     }
@@ -1857,7 +1857,7 @@ p.checkout-coupon input[type="text"] {
     & .brand{
       & li{
         & a.active{
-          color: #bc8246;
+          color: #212357;
         }
       }
     }

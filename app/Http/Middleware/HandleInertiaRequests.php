@@ -2,6 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Category;
+use App\Models\FooterLink;
+use App\Models\MainCategory;
+use App\Models\SiteSetting;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -50,6 +54,10 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'categories' => fn () => Category::get(),
+            'siteSettings' => fn () => SiteSetting::first(),
+            'mainCategories' => fn () => MainCategory::with('categories')->get(),
+            'footerLinks' => FooterLink::all(),
         ];
     }
 }

@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Models\SiteSetting;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Inertia::share([
+            'categories' => fn () => Category::with('products')->get(), // or any custom logic
+            'siteSettings' => fn () => SiteSetting::first(),
+        ]);
     }
 }

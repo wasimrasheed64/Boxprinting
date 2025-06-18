@@ -25,8 +25,8 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+{{--        <link rel="stylesheet" href="{{ asset('frontend-assets/css/style.css') }}">--}}
+{{--        <link rel="stylesheet" href="{{ asset('frontend-assets/css/bootstrap.min.css') }}">--}}
 
         @routes
         @vite(['resources/js/app.js','resources/scss/main.scss', 'vue3-carousel/dist/carousel.css'])

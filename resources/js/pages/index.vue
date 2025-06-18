@@ -1,42 +1,37 @@
 <template>
-  <layout>
-    <home-hero-slider />
-    <category-area />
-    <trending-products />
-    <shop-banner/>
-    <sale-off-product/>
-    <client-brand-slider/>
-    <blog-area/>
-    <subscribe-area/>
-  </layout>
+    <layout>
+        <home-hero-slider :banners="banners" />
+        <category-area />
+        <trending-products />
+        <shop-banner />
+        <sale-off-product />
+        <client-brand-slider />
+        <blog-area />
+        <subscribe-area />
+    </layout>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import HomeHeroSlider from "../components/hero-banner/HomeHeroSlider.vue";
-import Layout from "../layout/AppLayout.vue";
-import CategoryArea from "../components/category/CategoryArea.vue";
-import TrendingProducts from "../components/products/TrendingProducts.vue";
-import ShopBanner from "../components/shop-banner/ShopBanner.vue";
-import SaleOffProduct from "../components/products/SaleOffProduct.vue";
-import ClientBrandSlider from "../components/client-brands/ClientBrandSlider.vue";
-import BlogArea from "../components/blogs/BlogArea.vue";
-import SubscribeArea from "../components/subscribe/SubscribeArea.vue";
+<script setup lang="ts">
+import { defineProps } from 'vue'
 
-export default defineComponent({
-  components: {
-    Layout,
-    HomeHeroSlider,
-    CategoryArea,
-    TrendingProducts,
-    ShopBanner,
-    SaleOffProduct,
-    ClientBrandSlider,
-    BlogArea,
-    SubscribeArea,
-  },
-  setup() {
+// Props
+const props = defineProps({
+    banners: {
+        type: [],
+        required: true,
+    },
+})
 
-  },
-});
+console.log('Banner:', props.banners)
+
+// Components
+import Layout from '../layout/AppLayout.vue'
+import HomeHeroSlider from '../components/hero-banner/HomeHeroSlider.vue'
+import CategoryArea from '../components/category/CategoryArea.vue'
+import TrendingProducts from '../components/products/TrendingProducts.vue'
+import ShopBanner from '../components/shop-banner/ShopBanner.vue'
+import SaleOffProduct from '../components/products/SaleOffProduct.vue'
+import ClientBrandSlider from '../components/client-brands/ClientBrandSlider.vue'
+import BlogArea from '../components/blogs/BlogArea.vue'
+import SubscribeArea from '../components/subscribe/SubscribeArea.vue'
 </script>

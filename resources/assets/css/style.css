@@ -2034,7 +2034,6 @@ p {
   left: -20px;
   width: calc(100% + 40px);
   height: calc(100% + 40px);
-  background: #ffffff;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .banner__inner::before {

@@ -388,7 +388,7 @@
                 display: block;
                 color: $black-soft;
                 font-weight: 500;
-                padding: 27px 0 30px;
+                padding: 10px;
                 text-transform: capitalize;
             }
 
@@ -401,13 +401,13 @@
                 padding-right: 15px;
 
                 &::after {
-                    content: '\f107';
+                    content: '\2304';
                     position: absolute;
-                    right: 0;
-                    top: 50%;
+                    right: 2%;
+                    top: 45%;
                     transform: translateY(-50%);
-                    font-family: "Font Awesome 5 Pro";
-                    font-size: 14px;
+                    //font-family: 'Font Awesome 5 Free', serif;
+                    font-size: 12px;
                 }
             }
 

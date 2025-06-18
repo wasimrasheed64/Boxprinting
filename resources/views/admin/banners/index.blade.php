@@ -175,7 +175,7 @@
                                                                     Heading
                                                                 </label>
                                                                 <input type="text" class="form-control form-control-solid"
-                                                                       name="banner" placeholder="Example input" id="categoryName"
+                                                                       name="heading" placeholder="Example input" id="categoryName"
                                                                        value="{{ $banner->heading }}"
                                                                        required/>
                                                             </div>

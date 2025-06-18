@@ -60,7 +60,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { usePage, Link } from '@inertiajs/vue3'
-import menuData from '@/mixins/menuData.js'
+
 
 const mainCategories = ref(usePage().props?.mainCategories || [])
 

@@ -5,7 +5,7 @@
             style="background: #f8f9fa; border-bottom: 1px solid #e5e5e5"
             :class="`header__area ${transparent ? 'header__transparent' : ''} ${header_big ? 'box-25' : !white_bg ? 'grey-bg' : ''} ${isSticky ? 'sticky' : ''}`"
         >
-            <div class="top-bar py-3" style="background: #f8f9fa; border-bottom: 1px solid #e5e5e5">
+            <div class="top-bar py-2" style="background: #f8f9fa; border-bottom: 1px solid #e5e5e5">
                 <div class="d-flex justify-content-between align-items-center container">
                     <div class="top-bar__left d-flex align-items-center">
                         <div class="logo">
@@ -14,12 +14,22 @@
                             </Link>
                         </div>
                     </div>
-                    <div class="top-bar__right text-end">
-                        <span class="me-3"><i class="fas fa-phone-alt"></i>{{ siteSettings.phone }}</span>
-                        <span><i class="fas fa-envelope"></i> {{ siteSettings.email}} </span>
+                    <div class="top-bar__right d-flex align-items-center">
+                        <!-- Contact Info Stacked Vertically -->
+                        <div class="d-flex flex-column text-end me-3">
+                            <span class="theme-primary-color"><i class="fas fa-phone-alt me-1"></i>{{ siteSettings.phone }}</span>
+                            <span class="theme-primary-color"><i class="fas fa-envelope me-1"></i>{{ siteSettings.email }}</span>
+                        </div>
+
+                        <div class="border-start mx-3" style="height: 40px;"></div>
+                        <!-- Request a Quote Button -->
+                        <Link href="/quote-request" class="btn btn-primary theme-color-button btn-sm">
+                            Request a Quote
+                        </Link>
                     </div>
                 </div>
             </div>
+
 
             <div :class="`${header_big ? 'container-fluid' : 'container'}`">
                 <div class="row align-items-center">

@@ -5,8 +5,14 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     $banner = \App\Models\Banner::all();
+    $homePage = \App\Models\HomePage::first();
+    $products = App\Models\Product::select('id','name as title','slug','image_1 as img',
+        'image_2 as thumb_img','short_description')->where('is_featured',1)->get();
+
     return Inertia::render('index', [
         'banners' => $banner,
+        'homePage' => $homePage,
+        'products' => $products,
     ]);
 })->name('home');
 

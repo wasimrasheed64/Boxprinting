@@ -2,7 +2,7 @@
     <layout>
         <home-hero-slider :banners="banners" />
         <category-area />
-        <trending-products />
+        <trending-products :intro="homePage.company_intro" :products="products"  />
         <shop-banner />
         <sale-off-product />
         <client-brand-slider />
@@ -20,9 +20,17 @@ const props = defineProps({
         type: [],
         required: true,
     },
+    homePage:{
+        type: object,
+        default: {},
+    },
+    products:{
+      type: [],
+      default: []
+    }
 })
 
-console.log('Banner:', props.banners)
+console.log('HomePage:', props.products)
 
 // Components
 import Layout from '../layout/AppLayout.vue'
@@ -34,4 +42,5 @@ import SaleOffProduct from '../components/products/SaleOffProduct.vue'
 import ClientBrandSlider from '../components/client-brands/ClientBrandSlider.vue'
 import BlogArea from '../components/blogs/BlogArea.vue'
 import SubscribeArea from '../components/subscribe/SubscribeArea.vue'
+import { object } from 'yup';
 </script>

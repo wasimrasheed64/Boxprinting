@@ -147,6 +147,21 @@
                                                                        name="name" placeholder="Example input"
                                                                        value="{{ $mainCategory->name }}"
                                                                        id="categoryName" required/>
+
+
+                                                                <br>
+                                                                <label for="slug" class="required form-label">Slug</label>
+                                                                <input type="text" class="form-control form-control-solid"
+                                                                       name="slug"
+                                                                       value="{{ $mainCategory->slug }}"
+                                                                       placeholder="Box By industry...." id="slug" required/>
+
+                                                                @include('partials.forms.textarea',[
+                                                                   'name' => 'description',
+                                                                   'label' => 'Description',
+                                                                   'class' => 'textarea',
+                                                                   'value' =>  $mainCategory->description
+                                                               ])
                                                             </div>
                                                             <button class="btn btn-primary " type="submit">
                                                                 Submit
@@ -219,6 +234,16 @@
                                 <label for="categoryName" class="required form-label">Main Category Name</label>
                                 <input type="text" class="form-control form-control-solid"
                                        name="name" placeholder="Box By industry...." id="categoryName" required/>
+<br>
+                                <label for="slug" class="required form-label">Slug</label>
+                                <input type="text" class="form-control form-control-solid"
+                                       name="slug" placeholder="Box By industry...." id="slug" required/>
+
+                                @include('partials.forms.textarea',[
+                                   'name' => 'description',
+                                   'label' => 'Description',
+                                   'class' => 'textarea'
+                               ])
                             </div>
                             <button class="btn btn-primary " type="submit">
                                 Submit
@@ -241,7 +266,17 @@
         <!--begin::Page Custom Javascript(used by this page)-->
         <script src="{{ asset('assets/js/custom/apps/customers/list/export.js') }}"></script>
         <script src="{{ asset('assets/js/custom/apps/customers/list/list.js') }}"></script>
+
+
+                <script src="{{ asset('assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
+                <script>
+                    tinymce.init({
+                        selector: '.textarea'
+                    });
+                </script>
+
     @endsection
 
 </x-app-layout>
+
 

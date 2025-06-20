@@ -20,7 +20,7 @@
                             class="category-card"
                         >
                             <Link :href="category.slug">
-                                <img src="https://www.halfpricepackaging.com/_ipx/f_webp&fit_cover&s_440x440/images/home-featured-industries/cosmetics-boxes.jpg" class="category-image" alt="category" />
+                                <img :src="category.category_image" class="category-image" alt="category" />
                                 <div class="category-title">{{ category.name }}</div>
                             </Link>
                         </div>

@@ -35,12 +35,26 @@ Route::get('/{slug}', function () {
     else{
         $category = \App\Models\Category::where('slug', request()->slug)->first();
         if($category){
+            $products = \App\Models\Product::where('category_id', $category->id)
+                ->select('id','name as title','slug','image_1 as img',
+                    'image_2 as thumb_img','short_description')->get();
+            return Inertia::render('category', [
+                'category' => $category,
+                'products' => $products,
+                ]);
 
         }else {
             $product = \App\Models\Product::where('slug', request()->slug)->first();
             if($product){
+                $promotions = \App\Models\Promotion::where('page',2)->get();
+                $blogs = \App\Models\Blog::select('id','title','slug','image','short_description')
+                    ->orderBy('created_at', 'desc')->take(3)->get();
+                $faqs = \App\Models\Faq::select('id','question','answer')->get();
                 return Inertia::render('product-details/index', [
                     'product' => $product,
+                    'promotions' => $promotions,
+                    'blogs' => $blogs,
+                    'faqs' => $faqs,
                 ]);
             }
         }

@@ -15,7 +15,7 @@
                         </div>
                         <div class="shop__header-right d-flex align-items-center justify-content-between justify-content-sm-end">
                           <!-- sort-filtering -->
-                          <sort-filtering /> 
+                          <sort-filtering />
                           <!-- sort-filtering -->
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item">

@@ -1,29 +1,30 @@
 <template>
-  <layout :transparent="true">
-    <breadcrumb-area title="Product Details" subtitle="Product Details"/>
-    <shop-details-area :item="state.products[0]"/>
-  </layout>
+    <layout :transparent="true">
+        <breadcrumb-area title="Product Details" subtitle="Product Details" />
+        <shop-details-area :item="product" :product="product" :promotions="promotions" :blogs="blogs" :faqs="faqs" />
+    </layout>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Layout from "../../layout/AppLayout.vue";
 import BreadcrumbArea from "../../components/common/breadcrumb/BreadcrumbArea.vue";
-import { useProductsStore } from '@/store/useProducts';
 import ShopDetailsArea from "../../components/shop-details/ShopDetailsArea.vue";
-
-export default defineComponent({
-  components: {
-    Layout,
-    BreadcrumbArea,
-    ShopDetailsArea,
-  },
-  setup() {
-    const state = useProductsStore();
-    // useHead({
-    //   title: "Product Details - outStock",
-    // });
-    return {state}
-  },
-});
+const props = defineProps({
+    'product': {
+        type: Object,
+        default: () => ({})
+    },
+    'promotions': {
+        type: Array,
+        default: () => []
+    },
+    'blogs': {
+        type: Array,
+        default: () => []
+    },
+    'faqs': {
+        type: Array,
+        default: () => []
+    }
+})
 </script>

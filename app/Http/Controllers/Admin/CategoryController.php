@@ -31,7 +31,10 @@ class CategoryController extends Controller
             $request['is_menu'] = $request->has('is_menu');
             $request['is_footer'] = $request->has('is_footer');
                if (request('image')) {
-                $request['banner_image'] = request('image')->store($this->model::UPLOAD_DIRECTORY);
+                $request['banner_image'] = asset(request('image')->store($this->model::UPLOAD_DIRECTORY));
+            }
+            if (request('categoryImage')) {
+                $request['category_image'] = asset(request('categoryImage')->store($this->model::UPLOAD_DIRECTORY));
             }
             $this->model::create($request->all());
             $this->success('Successfully added the category');
@@ -55,7 +58,10 @@ class CategoryController extends Controller
             $request['is_menu'] = $request->has('is_menu');
             $request['is_footer'] = $request->has('is_footer');
             if (request('image')) {
-                $request['banner_image'] = request('image')->store($this->model::UPLOAD_DIRECTORY);
+                $request['banner_image'] = asset(request('image')->store($this->model::UPLOAD_DIRECTORY));
+            }
+            if (request('categoryImage')) {
+                $request['category_image'] = asset(request('categoryImage')->store($this->model::UPLOAD_DIRECTORY));
             }
             $category = $this->model::findOrFail($id);
             $category->update($request->all());

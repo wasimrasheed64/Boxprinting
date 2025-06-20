@@ -27,9 +27,12 @@ class Category extends Model
         'is_footer',
     ];
 
-    public function getBannerimageAttribute($value){
-        return asset('storage/'.$value);
-    }
+//    public function getBannerimageAttribute($value){
+//        return asset('storage/'.$value);
+//    }
+//    public function getCategoryimageAttribute($value){
+//        return asset('storage/'.$value);
+//    }
 
     public function products()
     {

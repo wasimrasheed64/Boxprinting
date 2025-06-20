@@ -38,6 +38,19 @@
                                       "function" => "1",
                                       ])
 
+                            <div class="col-lg-12">
+                                @include('partials.forms.inputPreviewImage',[
+                                       "width" => "250px",
+                                    ])
+                            </div>
+                            @include('partials.forms.fileinput',[
+                                     "name" => "image",
+                                     "label" => "Breadcrumb image",
+                                      "class" => "col-md-6",
+                                      "id" => "breadcrumbImage",
+                                      "function" => "1",
+                                      ])
+
 
                             @include('partials.forms.formInput',[
                                 "name" => "seo_title",

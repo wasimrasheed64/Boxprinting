@@ -32,6 +32,13 @@
                                        "value" => $category->banner_image
                                     ])
                             </div>
+{{--                            <div class="col-lg-6">--}}
+{{--                                @include('partials.forms.inputPreviewImage',[--}}
+{{--                                       "width" => "250px",--}}
+{{--                                       "value" => $category->category_image,--}}
+
+{{--                                    ])--}}
+{{--                            </div>--}}
                             @include('partials.forms.fileinput',[
                                      "name" => "image",
                                      "label" => "Breadcrumb image",
@@ -39,6 +46,13 @@
                                       "id" => "breadcrumbImage",
                                       "function" => "1",
                                       ])
+                            @include('partials.forms.imageInput',[
+                                        "name" => "categoryImage",
+                                     "label" => "Category image",
+                                      "class" => "col-md-6",
+                                         "value" => $category->category_image
+                                       ])
+
 
 
                             @include('partials.forms.formInput',[

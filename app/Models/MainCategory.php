@@ -12,7 +12,9 @@ class MainCategory extends Model
     const UPLOAD_DIRECTORY = 'images/maincategory';
     protected $fillable = [
         'name',
-        'image'
+        'image',
+        'slug',
+        'description'
     ];
 
     public function category()

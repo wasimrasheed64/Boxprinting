@@ -3,11 +3,13 @@
         <home-hero-slider :banners="banners" />
         <category-area />
         <trending-products :intro="homePage.company_intro" :products="products"  />
-        <shop-banner />
-        <sale-off-product />
-        <client-brand-slider />
-        <blog-area />
+        <shop-banner :promotions="promotions"/>
+        <CapabilitiesSection></CapabilitiesSection>
+        <content-show :company-intro="homePage.description" />
+        <FaqAndBlog :blogs="props.blogs" :faqs="props.faqs"/>
+        <HomeSevenTestimonial></HomeSevenTestimonial>
         <subscribe-area />
+
     </layout>
 </template>
 
@@ -27,10 +29,23 @@ const props = defineProps({
     products:{
       type: [],
       default: []
+    },
+    promotions: {
+        type: Array,
+        default: () => []
+    }
+    ,
+    blogs:{
+        type: [],
+        default: []
+    },
+    faqs: {
+        type: Array,
+        default: () => []
     }
 })
 
-console.log('HomePage:', props.products)
+console.log('HomePage:', props.promotions)
 
 // Components
 import Layout from '../layout/AppLayout.vue'
@@ -43,4 +58,11 @@ import ClientBrandSlider from '../components/client-brands/ClientBrandSlider.vue
 import BlogArea from '../components/blogs/BlogArea.vue'
 import SubscribeArea from '../components/subscribe/SubscribeArea.vue'
 import { object } from 'yup';
+import CapabilitiesSection from '@/components/common/Faqs/CapabilitiesSection.vue';
+import ContentShow from '@/components/common/contentShow.vue';
+import FaqAccordion from '@/components/common/Faqs/FaqAccordion.vue';
+import FaqAndBlog from '@/components/blogs/FaqAndBlog.vue';
+import HomeThreeTestimonial from '@/components/testimonial/HomeThreeTestimonial.vue';
+import HomeSevenTestimonial from '@/components/testimonial/HomeSevenTestimonial.vue';
+import RequestQouteForm from '@/components/forms/RequestQouteForm.vue';
 </script>

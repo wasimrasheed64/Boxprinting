@@ -1,84 +1,60 @@
 <template>
-  <section :class="`blog__area ${style_2 ? 'pt-90' : ''} pb-70`">
-    <div :class="`${style_3?'css-container' : 'container'}`">
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="section__title-wrapper text-center mb-55">
-            <div class="section__title mb-10">
-              <h2>Our Blog Posts</h2>
+    <section :class="`blog__area ${style_2 ? 'pt-90' : ''}`">
+        <div :class="style_3 ? 'css-container' : 'container'">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section__title-wrapper text-center mb-20">
+                        <div class="section__title mb-5">
+                            <h2>Our Blog Posts</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section__sub-title">
-              <p>
-                Mirum est notare quam littera gothica quam nunc putamus parum
-                claram!
-              </p>
+            <div class="row">
+                <div
+                    class="col-xl-12 col-md-12 mb-1"
+                    v-for="item in blogs"
+                    :key="item.id"
+                >
+                    <BlogItemHorizontal :item="item" />
+                </div>
             </div>
-          </div>
+
+            <div class="row">
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xl-12">
-          <Carousel
-            :items-to-show="3"
-            :wrap-around="true"
-            :snapAlign="'center'"
-            :breakpoints="{
-              992: {
-                itemsToShow: 3,
-              },
-              700: {
-                itemsToShow: 2,
-              },
-              0: {
-                itemsToShow: 1,
-              },
-            }"
-            class="blog__slider"
-          >
-            <Slide
-              v-for="(item) in blogData.filter((b) => b.blog === 'home')"
-              :key="item.id"
-            >
-              <blog-item :item="item" />
-            </Slide>
-          </Carousel>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
-<script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import blogData from '../../../data/blog-data'
+import BlogItemHorizontal from '@/components/blogs/BlogItemHorizontal.vue';
 
-// external
-import { Carousel, Slide } from "vue3-carousel";
-import { defineComponent } from "vue";
-// internal
-import blogData from "../../../data/blog-data";
-import BlogItem from "./BlogItem.vue";
+const props = defineProps<{
+    style_2?: boolean
+    style_3?: boolean
+    blogs: []
+}>()
 
-export default defineComponent({
-  components: { Carousel, Slide, BlogItem },
-  props:{
-    style_2:{
-      type:Boolean,
-      default:false,
-    },
-    style_3:{
-      type:Boolean,
-      default:false,
-    },
-  },
-  setup () {
-    return {
-      blogData
-    }
-  }
-});
+
+
+
 </script>
 
 <style scoped>
-  .blog__area .carousel__slide {
-    padding: 0 15px;
-  }
+.view-more-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #555;
+}
 </style>

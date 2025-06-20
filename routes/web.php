@@ -8,15 +8,44 @@ Route::get('/', function () {
     $homePage = \App\Models\HomePage::first();
     $products = App\Models\Product::select('id','name as title','slug','image_1 as img',
         'image_2 as thumb_img','short_description')->where('is_featured',1)->get();
+    $promotions = \App\Models\Promotion::where('page',1)->get();
+    $blogs = \App\Models\Blog::select('id','title','slug','image','short_description')
+        ->orderBy('created_at', 'desc')->take(3)->get();
+    $faqs = \App\Models\Faq::select('id','question','answer')->get();
 
     return Inertia::render('index', [
         'banners' => $banner,
         'homePage' => $homePage,
         'products' => $products,
+        'promotions' => $promotions,
+        'blogs' => $blogs,
+        'faqs' => $faqs,
     ]);
 })->name('home');
 
-Route::get('/shop', function () {
+Route::get('/{slug}', function () {
+    $mainCategory = \App\Models\MainCategory::with('category')->where('slug', request()->slug)->first();
+    if (!is_null($mainCategory)) {
+        $category = $mainCategory->category;
+        return Inertia::render('mainCategory', [
+            'mainCategory' => $mainCategory,
+            'categories' => $category,
+        ]);
+    }
+    else{
+        $category = \App\Models\Category::where('slug', request()->slug)->first();
+        if($category){
+
+        }else {
+            $product = \App\Models\Product::where('slug', request()->slug)->first();
+            if($product){
+                return Inertia::render('product-details/index', [
+                    'product' => $product,
+                ]);
+            }
+        }
+    }
+
     return Inertia::render('shop');
 })->name('shop');
 

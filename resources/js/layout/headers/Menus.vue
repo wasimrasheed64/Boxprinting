@@ -5,7 +5,7 @@
             :key="index"
             class="mega-menu has-dropdown"
         >
-            <Link :href="`${item.link}`">{{ item.name }}</Link>
+            <Link :href="`${item.slug}`">{{ item.name }}</Link>
 
             <!-- Mega menu dropdown -->
             <ul
@@ -19,7 +19,7 @@
                             :key="index"
                             class="category-card"
                         >
-                            <Link :href="category.link">
+                            <Link :href="category.slug">
                                 <img src="https://www.halfpricepackaging.com/_ipx/f_webp&fit_cover&s_440x440/images/home-featured-industries/cosmetics-boxes.jpg" class="category-image" alt="category" />
                                 <div class="category-title">{{ category.name }}</div>
                             </Link>

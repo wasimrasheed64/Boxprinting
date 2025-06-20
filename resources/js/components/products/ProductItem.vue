@@ -18,8 +18,8 @@
 
             </div>
             <div class="add-cart p-absolute transition-3">
-                <Link class="btn theme-color-button btn-sm btn-primary">
-                    Request a qoute</Link>
+                <Link href="#" class="btn theme-color-button btn-sm btn-primary">
+                    Request a Quote</Link>
                 <!-- Add to Cart button or logic can go here -->
             </div>
         </div>

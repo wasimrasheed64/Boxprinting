@@ -1,16 +1,16 @@
 <template>
     <div :class="`banner__area ${style_2 ? 'pt-95' : ''} ${style_3 ? 'pt-20' : ''} ${style_4 ? 'pt-30' : ''}`">
         <div :class="`container ${style_3 ? 'css-container' : ''}`">
-            <div :class="`${!style_2 && !style_3 && !style_4 ? 'banner__inner p-relative mt--95' : ''} ${style_4 ? 'banner__inner-2 p-relative' : ''}`">
+            <div :class="`${!syle_2 && !style_3 && !style_4 ? 'banner__inner p-relative mt--95' : ''} ${style_4 ? 'banner__inner-2 p-relative' : ''}`">
                 <div class="row">
                     <div
-                        v-for="item in mainCategories"
+                        v-for="item in maitnCategories"
                         :key="item.id"
                         class="col-xl-4 col-lg-4 col-md-6"
                     >
                         <div class="banner__item mb-30 p-relative">
                             <div class="banner__thumb fix">
-                                <Link href="/shop" class="w-img">
+                                <Link :href="item.slug" class="w-img">
                                     <img :src="item.image" alt="banner" />
                                 </Link>
                             </div>

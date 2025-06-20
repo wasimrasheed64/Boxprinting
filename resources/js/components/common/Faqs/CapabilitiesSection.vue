@@ -1,9 +1,9 @@
 <template>
     <section class="py-5 bg-white text-center">
         <div class="container">
-            <h2 class="theme-primary-color mb-3">Our Capabilities</h2>
-            <p class="theme-secondary-color mb-5">
-                At Half Price Packaging, we are committed to delivering exceptional packaging solutions customized to your needs. From innovative design to seamless delivery, we ensure excellence at every step, bringing your vision to life with precision and care.
+            <h2 class="theme-primary-color mb-3" v-if="showText">Our Capabilities</h2>
+            <p class="theme-secondary-color mb-5" v-if="showText">
+                At Create my Packaging, we are committed to delivering exceptional packaging solutions customized to your needs. From innovative design to seamless delivery, we ensure excellence at every step, bringing your vision to life with precision and care.
             </p>
 
             <div class="row g-4 mt-1">
@@ -20,6 +20,12 @@
 
 <script setup lang="ts">
 import CapabilityItem from './CapabilityItem.vue'
+withDefaults(defineProps<{
+    showText?: boolean
+}>(), {
+    showText: true
+})
+
 
 const capabilities = [
     { title: 'Global Sourcing', icon: '🌐' },

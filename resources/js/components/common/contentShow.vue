@@ -21,6 +21,6 @@ defineProps({
 
 <style scoped lang="scss">
 .bg-brown {
-    background-color: #EAA374;
+    background-color: #f9f7f0;
 }
 </style>

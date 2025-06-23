@@ -22,13 +22,13 @@ class SiteSettingController extends Controller
     {
         try {
             if (request('footerLogo')) {
-                $request['footer_logo'] = request('footerLogo')->store($this->model::UPLOAD_DIRECTORY);
+                $request['footer_logo'] = asset('storage/'.request('footerLogo')->store($this->model::UPLOAD_DIRECTORY));
             }
             if (request('Logo')) {
-                $request['logo'] = request('Logo')->store($this->model::UPLOAD_DIRECTORY);
+                $request['logo'] = asset('storage/'.request('Logo')->store($this->model::UPLOAD_DIRECTORY));
             }
             if (request('favIcon')) {
-                $request['favicon'] = request('favIcon')->store($this->model::UPLOAD_DIRECTORY);
+                $request['favicon'] = asset('storage/'.request('favIcon')->store($this->model::UPLOAD_DIRECTORY));
             }
             $siteSetting = $this->model::first();
             $siteSetting->update($request->all());

@@ -946,3 +946,11 @@ p {
 .theme-font-heading-1{
     font-size: 24px !important;
 }
+
+.custom-description-box {
+    background-color: #F9F7F0; /* or #f8f9fa for Bootstrap light */
+    border-radius: 2rem;
+    padding: 3rem;
+    color:#0F2D47 !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}

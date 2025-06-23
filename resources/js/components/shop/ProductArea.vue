@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="shop__header">
-                        <h2 class="shop__title">{{ category.name }}</h2>
+                        <h2 class="theme-primary-color shop__title">{{ category.name }}</h2>
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-8">
@@ -34,7 +34,7 @@
             <div class="row">
                <div class="col-lg-12 col-md-12 col-12 mt-10">
                    <div class="custom-description-box ">
-                        <span v-html="category.description"></span>
+                        <span class="theme-primary-color" v-html="category.description"></span>
                    </div>
                </div>
             </div>
@@ -70,9 +70,10 @@ defineProps({
 <style scoped>
 /* Global or scoped CSS */
 .custom-description-box {
-    background-color: #f7f7f7; /* or #f8f9fa for Bootstrap light */
+    background-color: #F9F7F0; /* or #f8f9fa for Bootstrap light */
     border-radius: 2rem;
     padding: 3rem;
+    color:#0F2D47 !important;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 

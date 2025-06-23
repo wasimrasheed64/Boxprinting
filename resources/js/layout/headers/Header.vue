@@ -16,7 +16,7 @@
                     </div>
                     <div class="top-bar__right d-flex align-items-center">
                         <!-- Contact Info Stacked Vertically -->
-                        <div class="d-flex flex-column text-end me-3">
+                        <div class="d-flex flex-column text-end me-1">
                             <span class="theme-primary-color"><i class="fas fa-phone-alt me-1"></i>{{ siteSettings.phone }}</span>
                             <span class="theme-primary-color"><i class="fas fa-envelope me-1"></i>{{ siteSettings.email }}</span>
                         </div>

@@ -1,5 +1,10 @@
 <template>
+
     <layout :transparent="true">
+        <Head>
+            <title>{{ title }}</title>
+            <meta name="description" :content="description" />
+        </Head>
         <breadcrumb-minimal :items="[
     { label: 'Industry', link: '/industry' },
     { label: 'Cosmetics', link: '/industry/cosmetics' },
@@ -21,6 +26,8 @@ import ShopBanner from '@/components/shop-banner/ShopBanner.vue';
 import SubscribeArea from '@/components/subscribe/SubscribeArea.vue';
 import RelatedProducts from '@/components/shop-details/RelatedProducts.vue';
 import BreadcrumbMinimal from '@/components/common/breadcrumb/BreadcrumbMinimal.vue';
+import { Head } from '@inertiajs/vue3';
+import { computed } from 'vue';
 const props = defineProps({
     'product': {
         type: Object,
@@ -43,6 +50,9 @@ const props = defineProps({
         default: () => []
     },
 })
-)
 
+const title = computed(() => props.product.seo_title || 'Create My Packaging')
+const description = computed(() =>
+    props.product.seo_description || 'Create My Packaging is your go-to destination for custom packaging solutions. Explore our wide range of products and services designed to meet your unique packaging needs.'
+)
 </script>

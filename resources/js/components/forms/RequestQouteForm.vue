@@ -2,7 +2,7 @@
     <form class="quote-form pt-5">
         <div class="row">
             <div class="col-xl-12">
-                        <h2>Get A Quick Qoute Now</h2>
+                        <h2 class="theme-primary-color">Get A Quick Qoute Now</h2>
             </div>
         </div>
       <div class="form-row">
@@ -161,8 +161,7 @@
     </form>
 </template>
 
-<script setup>
-// Add any necessary script logic here
+<script setup lang="ts">
 </script>
 
 <style scoped>
@@ -219,7 +218,7 @@ textarea.details-textarea {
   align-items: center;
   justify-content: center;
   min-width: 220px;
-  padding: 1.2rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   border: 2px dashed #a78bfa;
   border-radius: 1rem;
   background: #faf9f6;
@@ -243,18 +242,20 @@ textarea.details-textarea {
   font-size: 0.95rem;
 }
 .order-btn {
-  background: #881337;
-  color: #fff;
   font-size: 1.3rem;
   font-weight: 600;
   padding: 0.9rem 3.5rem;
-  border: none;
   border-radius: 0.7rem;
   cursor: pointer;
   transition: background 0.2s;
+    background-color:#0F2D47 !important;
+    color:#fff !important;
+    border: 1px solid #0F2D47 !important;
 }
 .order-btn:hover {
-  background: #a21caf;
+    background-color:#E1732D !important;
+    color:#fff !important;
+    border: 1px solid #E1732D !important;
 }
 @media (max-width: 1100px) {
   .form-row { flex-direction: column; gap: 0.7rem; }

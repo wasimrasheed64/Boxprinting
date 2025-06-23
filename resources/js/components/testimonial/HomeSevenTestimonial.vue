@@ -4,7 +4,7 @@
         <div class="container custom-container-2">
             <div class="row">
                 <div class="col-xl-12 text-center pb-30">
-                    <h2>See Why Customers Love Us!</h2>
+                    <h2 class="theme-primary-color">See Why Customers Love Us!</h2>
                 </div>
             </div>
             <div class="row">

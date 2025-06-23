@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-lg w-100 text-white" style="background-color: #791432">
+                <button type="submit" class="btn theme-color-button btn-lg w-100 " style="background-color: #791432">
                     Get a Quote
                 </button>
             </div>

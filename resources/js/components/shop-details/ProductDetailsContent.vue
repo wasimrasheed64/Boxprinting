@@ -1,14 +1,12 @@
 <template>
     <div :class="`product__modal-content ${style_2 ? 'product__modal-content-2' : ''}`">
-        <h4>
+        <h4 class="theme-primary-color">
             <span v-html="item.name"></span>
+            <p  v-html="item.short_description"></p>
         </h4>
+
         <div class="product__modal-form">
-<!--            <div class="row">-->
-<!--                <div class="col-lg-12 col-md-12">-->
-<!--                   <h3>Get Custom Qoute</h3>-->
-<!--                </div>-->
-<!--            </div>-->
+
          <QouteForm></QouteForm>
         </div>
     </div>

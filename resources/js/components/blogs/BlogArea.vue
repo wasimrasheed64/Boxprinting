@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section__title-wrapper text-center mb-20">
-                        <div class="section__title mb-5">
-                            <h2>Our Blog Posts</h2>
+                        <div class="mb-5">
+                            <h2 class="theme-primary-color">Our Blog Posts</h2>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 <template>
     <section class="py-3 bg-light">
         <div class="container">
-            <h3 class="text-center mb-4">Get an Instant Quote</h3>
+            <h3 class="theme-primary-color text-center mb-4">Get an Instant Quote</h3>
 
             <form @submit.prevent="handleSubmit" class="row g-3">
                 <div class="col-md-6">
@@ -63,7 +63,8 @@
           ></textarea>
                 </div>
                 <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-danger px-5 py-2 fw-semibold">
+                    <button type="submit" class="btn theme-color-button
+ px-5 py-2 fw-semibold">
                         Get a Quote
                     </button>
                 </div>

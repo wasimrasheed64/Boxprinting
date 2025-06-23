@@ -20,7 +20,7 @@ const toggle = (idx: number) => {
             <div class="col-xl-12">
                 <div class="section__title-wrapper text-center mb-20">
                     <div class=" mb-5">
-                        <h2>FAQs</h2>
+                        <h2 class="theme-primary-color">FAQs</h2>
                     </div>
                 </div>
             </div>
@@ -89,12 +89,12 @@ const toggle = (idx: number) => {
     padding: 1rem 1.25rem;
     border-radius: 0;
     transition: background-color 0.2s ease;
-    background-color: #f8f9fa;
+    background-color: #F9F7F0;
     color: #0F2D47;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #e6e6e6;
+    background-color: #F9F7F0;
     color: #0F2D47;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }

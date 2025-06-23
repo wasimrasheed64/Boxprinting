@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\FooterLink;
 use App\Models\MainCategory;
 use App\Models\SiteSetting;
+use App\Models\SocialLink;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -56,7 +57,10 @@ class HandleInertiaRequests extends Middleware
             ],
             'categories' => fn () => Category::get(),
             'siteSettings' => fn () => SiteSetting::first(),
+            'footerCategories' => fn () => Category::select('id','name','slug')->where('is_footer', true)->limit(7)->get(),
+            'socialLinks' => fn () => SocialLink::get() ?? [],
             'mainCategories' => fn () => MainCategory::with('categories')->get(),
+            'topBlogs' => fn () => \App\Models\Blog::latest()->take(3)->get(),
             'footerLinks' => FooterLink::all(),
         ];
     }

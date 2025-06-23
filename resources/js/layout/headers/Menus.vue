@@ -52,6 +52,9 @@
 
             </ul>
         </li>
+        <li>
+            <Link href="/blog">Blog</Link>
+        </li>
     </ul>
 </template>
 

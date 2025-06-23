@@ -1,11 +1,11 @@
 <template>
   <layout :transparent="true">
-    <breadcrumb-area title="News & Blog" subtitle="Blog Standard"/>
+    <breadcrumb-area title="News & Blog" subtitle="Blogs"/>
     <blog-standard-area/>
   </layout>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import Layout from "../layout/AppLayout.vue";
 import BreadcrumbArea from "../components/common/breadcrumb/BreadcrumbArea.vue";

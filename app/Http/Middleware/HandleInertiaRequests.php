@@ -55,11 +55,15 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
-            'categories' => fn () => Category::get(),
             'siteSettings' => fn () => SiteSetting::first(),
             'footerCategories' => fn () => Category::select('id','name','slug')->where('is_footer', true)->limit(7)->get(),
             'socialLinks' => fn () => SocialLink::get() ?? [],
-            'mainCategories' => fn () => MainCategory::with('categories')->get(),
+            'mainCategories' => fn () => MainCategory::select('id', 'name', 'slug','image')
+                ->with(['categories' => function ($query) {
+                    $query->select('id', 'name', 'slug', 'main_category_id','banner_image',
+                        'category_image');
+                }])
+                ->get(),
             'topBlogs' => fn () => \App\Models\Blog::latest()->take(3)->get(),
             'footerLinks' => FooterLink::all(),
         ];

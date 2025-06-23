@@ -646,7 +646,7 @@ p {
 
 .page{
 	&__title{
-		height: 530px;
+		height: 430px;
 		@include background();
 		@media #{$sm}{
 			height: 400px;
